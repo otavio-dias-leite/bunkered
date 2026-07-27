@@ -1,4 +1,4 @@
-![Logo] (others/Itchio/Bunkered_logo.png)
+![Logo](others/Itchio/Bunkered_logo.png)
 # bunkered
  A survival bunker simulation game built with Godot.
 # About game
