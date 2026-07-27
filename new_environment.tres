@@ -1,0 +1,15 @@
+[gd_resource type="Environment" format=3 uid="uid://wbpl32b3a8ks"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1fale"]
+
+[sub_resource type="Sky" id="Sky_k6w00"]
+sky_material = SubResource("ProceduralSkyMaterial_1fale")
+
+[resource]
+background_mode = 2
+background_color = Color(0.96035105, 0.96035105, 0.96035093, 1)
+sky = SubResource("Sky_k6w00")
+ssr_enabled = true
+ssao_enabled = true
+ssao_intensity = 6.78
+ssil_enabled = true

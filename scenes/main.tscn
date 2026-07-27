@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bsma3qg414tea"]
+
+[ext_resource type="PlaneMesh" uid="uid://cci2w46n1vhod" path="res://new_plane_mesh.tres" id="1_0wfyh"]
+[ext_resource type="Environment" uid="uid://wbpl32b3a8ks" path="res://new_environment.tres" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://bcg2kkbsnttec" path="res://assets/Starter-Kit-3D-Platformer-main/scripts/view.gd" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://cnidk2saivlag" path="res://scenes/player.gd" id="2_sugp2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6pooj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_30ma8"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_30ma8"]
+size = Vector3(1, 2, 1)
+
+[node name="main" type="Node3D" unique_id=820645860]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1755078054]
+transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("1_0wfyh")
+metadata/_edit_group_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1895040338]
+transform = Transform3D(1.0000001, 0, 0, 0, 0.99999994, 0, 0, 0, 1.0000001, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1853874657]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_6pooj")
+
+[node name="camera" type="Node3D" parent="." unique_id=2012724934 node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 8, 2)
+script = ExtResource("2_jyhfs")
+target = NodePath("../player")
+
+[node name="Camera" type="Camera3D" parent="camera" unique_id=1771846336]
+fov = 90.0
+
+[node name="player" type="CharacterBody3D" parent="." unique_id=1876335085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+script = ExtResource("2_sugp2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=927060285]
+shape = SubResource("BoxShape3D_30ma8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/CollisionShape3D" unique_id=993497162]
+mesh = SubResource("BoxMesh_30ma8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2087735616]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=873023160]
+environment = ExtResource("1_o5qli")
