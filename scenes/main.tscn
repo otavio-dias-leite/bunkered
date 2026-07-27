@@ -4,13 +4,11 @@
 [ext_resource type="Environment" uid="uid://wbpl32b3a8ks" path="res://new_environment.tres" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bcg2kkbsnttec" path="res://assets/Starter-Kit-3D-Platformer-main/scripts/view.gd" id="2_jyhfs"]
 [ext_resource type="Script" uid="uid://cnidk2saivlag" path="res://scenes/player.gd" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://c4fba1hyqkstw" path="res://assets/godot-4-3D-Characters-main/addons/gdquest_gdbot/model/gdbot.glb" id="4_tbgi4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6pooj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_30ma8"]
-size = Vector3(1, 2, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_30ma8"]
 size = Vector3(1, 2, 1)
 
 [node name="main" type="Node3D" unique_id=820645860]
@@ -42,8 +40,8 @@ script = ExtResource("2_sugp2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=927060285]
 shape = SubResource("BoxShape3D_30ma8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="player/CollisionShape3D" unique_id=993497162]
-mesh = SubResource("BoxMesh_30ma8")
+[node name="gdbot" parent="player/CollisionShape3D" unique_id=1111560071 instance=ExtResource("4_tbgi4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2087735616]
 
