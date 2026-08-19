@@ -1,4 +1,4 @@
-![Bunkered Logo](others/Itchio/Bunkered_logo.png)
+![Bunkered Logo](Bunkered_Logo.png)
 
 # Bunkered
 
