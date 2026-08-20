@@ -206,6 +206,8 @@ I have created several other games throughout my life, including projects for th
 
 Bunkered is another step in that process, but with the goal of eventually becoming a complete and playable game.
 
+I started by creating game prototypes in Godot Engine and GB Studio to test out my ideas. Later, I’ll port everything to devkitPro/devkitARM and work with low-level code.
+
 ## Future Projects
 
 I am also considering a potential second game built around a similar design philosophy, but set in a different survival scenario, such as deep-space survival or a zombie apocalypse.
